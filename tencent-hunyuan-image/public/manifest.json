@@ -2,7 +2,7 @@
   "identifier": "tencent-hunyuan-image",
   "api": [
     {
-      "url": "https://hunyuan.tencentcloudapi.com",
+      "url": "/api/generate",
       "name": "generateImage",
       "description": "使用腾讯混元大模型，根据文本提示生成图片",
       "parameters": {
