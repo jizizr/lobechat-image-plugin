@@ -2,7 +2,7 @@
   "identifier": "tencent-hunyuan-image",
   "api": [
     {
-      "url": "https://lobechat.tencent-hunyuan-image.230617.xyz/api/generate",
+      "url": "https://hunyuan.tencentcloudapi.com",
       "name": "generateImage",
       "description": "使用腾讯混元大模型，根据文本提示生成图片",
       "parameters": {
@@ -21,8 +21,47 @@
           },
           "Style": {
             "type": "string",
-            "description": "绘画风格，请在混元生图风格列表中选择期望的风格，传入风格编号",
-            "example": "riman"
+            "description": "绘画风格，选择期望的风格编号",
+            "enum": [
+              "riman",
+              "shuimo",
+              "monai",
+              "bianping",
+              "xiangsu",
+              "ertonghuiben",
+              "3dxuanran",
+              "manhua",
+              "heibaimanhua",
+              "xieshi",
+              "dongman",
+              "bijiasuo",
+              "saibopengke",
+              "youhua",
+              "masaike",
+              "qinghuaci",
+              "xinnianjianzhi",
+              "xinnianhuayi"
+            ],
+            "enumDescriptions": [
+              "日漫动画",
+              "水墨画",
+              "莫奈",
+              "扁平插画",
+              "像素插画",
+              "儿童绘本",
+              "3D 渲染",
+              "漫画",
+              "黑白漫画",
+              "写实",
+              "动漫",
+              "毕加索",
+              "赛博朋克",
+              "油画",
+              "马赛克",
+              "青花瓷",
+              "新年剪纸画",
+              "新年花艺"
+            ]
           },
           "Resolution": {
             "type": "string",
@@ -49,8 +88,12 @@
           "Clarity": {
             "type": "string",
             "description": "超分选项，默认不做超分",
-            "enum": ["", "x2", "x4"],
-            "default": "x2"
+            "enum": [
+              "",
+              "x2",
+              "x4"
+            ],
+            "default": ""
           },
           "ContentImage": {
             "type": "object",
@@ -65,7 +108,10 @@
           "Revise": {
             "type": "integer",
             "description": "prompt扩写开关，1为开启，0为关闭，默认开启",
-            "enum": [0, 1],
+            "enum": [
+              0,
+              1
+            ],
             "default": 1
           },
           "Seed": {
@@ -74,19 +120,30 @@
             "minimum": 0
           }
         },
-        "required": ["Prompt"]
+        "required": [
+          "Prompt"
+        ]
       }
     }
   ],
   "meta": {
     "avatar": "🎨",
     "description": "此插件使用腾讯混元大模型，根据文本提示生成图像。",
-    "tags": ["图片", "生成", "混元", "腾讯", "hunyuan"],
+    "tags": [
+      "图片",
+      "生成",
+      "混元",
+      "腾讯",
+      "hunyuan"
+    ],
     "title": "腾讯混元大模型图片生成器"
   },
   "settings": {
     "type": "object",
-    "required": ["TENCENT_SECRET_ID", "TENCENT_SECRET_KEY"],
+    "required": [
+      "TENCENT_SECRET_ID",
+      "TENCENT_SECRET_KEY"
+    ],
     "properties": {
       "TENCENT_SECRET_ID": {
         "type": "string",
