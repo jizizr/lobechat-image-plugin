@@ -2,7 +2,7 @@
   "identifier": "xai-image-generator",
   "api": [
     {
-      "url": "/api/generate",
+      "url": "https://lobechat-image-plugin-jizizr/api/generate",
       "name": "generateImage",
       "description": "使用xAI的image模型，根据文本提示生成图片",
       "parameters": {
